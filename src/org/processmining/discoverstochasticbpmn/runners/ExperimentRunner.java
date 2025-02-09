@@ -259,25 +259,13 @@ public class ExperimentRunner {
         return models;
     }
 
-    public static int[] getLogInfo(XLog log) {
-        int numberOfTraces = 0;
-        Set<XTrace> uniqueTraces = new HashSet<>();
-
-        for (XTrace trace : log) {
-            numberOfTraces++;
-            uniqueTraces.add(trace);
-        }
-
-        int numberOfUniqueTraces = uniqueTraces.size();
-        return new int[] { numberOfTraces, numberOfUniqueTraces };
-    }
-
     private static void recordLogInfo(
             String key,
             XLog log,
             ImmutableTable.Builder<String, String, Integer> logInfoTB
     ) {
-        XLogInfo info = log.getInfo(new XEventNameClassifier());
+
+//        XLogInfo info = log.getInfo(new XEventNameClassifier());
 //        System.out.printf(
 //                "%s - traces: %d, events: %d, event classes: %d\n",
 //                key,
@@ -288,18 +276,18 @@ public class ExperimentRunner {
         logInfoTB.put(
                 key,
                 "Number of Traces",
-                info.getNumberOfTraces()
+                log.size()
         );
-        logInfoTB.put(
-                key,
-                "Number of Events",
-                info.getNumberOfEvents()
-        );
-        logInfoTB.put(
-                key,
-                "Number of Event Classes",
-                info.getEventClasses().size()
-        );
+//        logInfoTB.put(
+//                key,
+//                "Number of Events",
+//                info.getNumberOfEvents()
+//        );
+//        logInfoTB.put(
+//                key,
+//                "Number of Event Classes",
+//                info.getEventClasses().size()
+//        );
     }
 
     private static void recordModelInfo(

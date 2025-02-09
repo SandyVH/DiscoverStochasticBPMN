@@ -41,6 +41,10 @@ public class DiscoverProbabilities {
         this.config = config;
     }
 
+    public DiscoverProbabilities(BPMNDiagram bpmn, XLog log, DiscoverStochasticBPMN_Configuration.typeValue strategy) {
+        this(bpmn, log, new DiscoverStochasticBPMN_Configuration(strategy));
+    }
+
     public DiscoverProbabilities(BPMNDiagram bpmn, XLog log) {
         this(bpmn, log, new DiscoverStochasticBPMN_Configuration());
     }

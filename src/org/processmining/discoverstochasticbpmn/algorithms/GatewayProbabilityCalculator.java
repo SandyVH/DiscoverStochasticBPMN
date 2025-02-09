@@ -40,7 +40,7 @@ public class GatewayProbabilityCalculator {
         for (IvMTrace ivMTrace : alignedLog) {
             traceIndex += 1;
             if (includeTrace(ivMTrace)) {
-                System.out.println("Trace " + traceIndex + ": " + Arrays.toString(ivMTrace.toArray()));
+//                System.out.println("Trace " + traceIndex + ": " + Arrays.toString(ivMTrace.toArray()));
                 for (IvMMove move : ivMTrace) {
                     if(!move.isLogMove()){
 //                    System.out.println(model.getNetTransition(move.getTreeNode()).getLabel());

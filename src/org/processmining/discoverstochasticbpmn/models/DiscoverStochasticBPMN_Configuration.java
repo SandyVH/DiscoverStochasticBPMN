@@ -12,4 +12,8 @@ public class DiscoverStochasticBPMN_Configuration {
     public DiscoverStochasticBPMN_Configuration() {
         this.calculateProbabilityUsing = typeValue.calculationType_PERFECTLYFIT;
     }
+
+    public DiscoverStochasticBPMN_Configuration(typeValue strategy) {
+        this.calculateProbabilityUsing = strategy;
+    }
 }
